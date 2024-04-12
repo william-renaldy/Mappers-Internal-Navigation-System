@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/int_nav_css.css' %}">
+    <title>INTERNAL NAVIGATION</title>
+    {% load static %}
+    <link rel = "icon" href ="{% static '/images/map.png' %}" type = "image/x-icon">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        #plotly_graph {
+            width: 800px;
+            height: 600px;
+            position: relative;
+            top: 50px;
+            left: 50px;
+        }
+        </style>
+</head>
+<body>
+    <nav>
+        <div class="background_image" id="home">
+            <div class="topnav">
+                {% load static %}
+                <img class="map_icon" src="{% static 'images/map.png' %}">
+                <a class="active" href="#home" onClick="history.go(0)" VALUE="Refresh">Home</a>
+            </div>
+            <h2 class="head">MAPPERS</h2>
+            <form autocomplete="off">
+                <div class="autocomplete1" style="width:300px;">
+                    <input id="input_start" type="text" name="startingpoint" placeholder="Choose Starting Point">
+                </div>
+                <div class="autocomplete2" style="width:300px;">
+                    <input id="input_dest" type="text" name="destination" placeholder="Choose Destination">
+                </div>
+                <div class="autocomplete3">
+                    <input class="sub" type="submit">
+                </div>
+            </form>
+        </div>
+
+    </nav>  
+
+    {% load static %}
+    <script src="{% static 'js/int_nav_js.js' %}"></script>
+</body>
+</html>
